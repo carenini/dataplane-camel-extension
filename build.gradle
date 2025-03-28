@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation project(':spi:dataplane-spi')
+    implementation project(':spi:core-spi')
+    implementation project(':core:common:util')
+    implementation project(':core:common:configuration')
+    implementation project(':core:dataplane:data-plane-spi')
+    implementation project(':core:dataplane:data-plane-core')
+    
+    // Apache Camel dependencies
+    implementation 'org.apache.camel:camel-core:3.20.6'
+    implementation 'org.apache.camel:camel-spring:3.20.6'
+    implementation 'org.apache.camel:camel-file:3.20.6'
+    implementation 'org.apache.camel:camel-http:3.20.6'
+    implementation 'org.apache.camel:camel-jackson:3.20.6'
+    implementation 'org.apache.camel:camel-stream:3.20.6'
+} 

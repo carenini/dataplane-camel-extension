@@ -1,0 +1,20 @@
+package org.eclipse.dataspaceconnector.dataplane.extension.processor;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.eclipse.dataspaceconnector.spi.types.domain.transfer.DataFlowRequest;
+
+public class SourceProcessor implements Processor {
+    private DataFlowRequest request;
+
+    public void setRequest(DataFlowRequest request) {
+        this.request = request;
+    }
+
+    @Override
+    public void process(Exchange exchange) {
+        String sourcePath = request.getSourceDataAddress().getProperties()
+            .getOrDefault("path", "data/test.txt");
+        exchange.getIn().setBody(sourcePath);
+    }
+} 
